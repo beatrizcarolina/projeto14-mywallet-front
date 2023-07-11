@@ -7,7 +7,7 @@ export default function Transaction({ transactionInfo }) {
         <ListItemContainer>
             <div>
                 <span>{dayjs(date).format("DD/MM")}</span>
-                <strong>{description}</strong>
+                <strong data-test="registry-name">{description}</strong>
             </div>
             <div>
                 <Value color={type === "entrada"? "positivo":"negativo"} data-test="registry-amount">
