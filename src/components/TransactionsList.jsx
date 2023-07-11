@@ -2,15 +2,16 @@ import styled from "styled-components";
 import dayjs from "dayjs";
 
 export default function Transaction({ transactionInfo }) {
-    const {date, type, value} = transactionInfo;
+    const {date, description, type, value} = transactionInfo;
     return (
         <ListItemContainer>
             <div>
                 <span>{dayjs(date).format("DD/MM")}</span>
+                <strong>{description}</strong>
             </div>
             <div>
                 <Value color={type === "entrada"? "positivo":"negativo"} data-test="registry-amount">
-                    {console.log(transactionInfo) && Math.abs(value).toFixed(2).replace('.', ',')}
+                    {Math.abs(value).toFixed(2).replace('.', ',')}
                 </Value>  
             </div>
         </ListItemContainer>

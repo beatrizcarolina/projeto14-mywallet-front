@@ -56,11 +56,11 @@ export default function TransactionsPage() {
 
     return (
         <TransactionsContainer>
-            <h1>Nova TRANSAÇÃO</h1>
+            <h1>Nova Transação</h1>
             <form onSubmit={handleForm}>
                 <input placeholder="Valor" type="number" min="0" step="0.01" required ref={value} data-test="registry-amount-input"/>
                 <input placeholder="Descrição" type="text" required ref={description} data-test="registry-name-input"/>
-                <button data-test="registry-save">Salvar TRANSAÇÃO</button>
+                <button data-test="registry-save">Salvar Transação</button>
             </form>
         </TransactionsContainer>
     );

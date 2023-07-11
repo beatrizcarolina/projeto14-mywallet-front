@@ -74,7 +74,7 @@ export default function HomePage() {
 
             <TransactionsContainer>
                 <ul>
-                    {console.log(data) && data.transactions.length > 0 && data.transactions.map((transaction, index) => 
+                    {data.transactions.length > 0 && data.transactions.map((transaction, index) => 
                         <Transaction
                             key={index}
                             transactionInfo={transaction}
