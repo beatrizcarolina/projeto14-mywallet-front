@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { UserContext } from "../UserContext";
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import Transaction from "../components/TransactionsList.jsx";
 
 export default function HomePage() {
     const { user } = useContext(UserContext);
@@ -72,6 +73,15 @@ export default function HomePage() {
             </Header>
 
             <TransactionsContainer>
+                <ul>
+                    {console.log(data) && data.transactions.length > 0 && data.transactions.map((transaction, index) => 
+                        <Transaction
+                            key={index}
+                            transactionInfo={transaction}
+                        />
+                    )}
+                </ul>
+
                 <article>
                     <strong>Saldo</strong>
                     <Value color={balance} data-test="total-amount">{Math.abs(data.balance).toFixed(2).replace('.', ',')}</Value>
